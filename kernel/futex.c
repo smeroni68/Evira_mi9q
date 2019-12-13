@@ -3759,7 +3759,7 @@ static void exit_robust_list(struct task_struct *curr)
 	}
 }
 
-void futex_mm_release(struct task_struct *tsk)
+static void futex_cleanup(struct task_struct *tsk)
 {
 	if (unlikely(tsk->robust_list)) {
 		exit_robust_list(tsk);
