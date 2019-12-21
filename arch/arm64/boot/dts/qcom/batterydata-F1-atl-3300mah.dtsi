@@ -14,7 +14,7 @@
 qcom,scud {
 	qcom,profile-revision = <24>;
 	/* #3675702_Xiaomi_F1sun_3300mAh_averaged_MasterSlave_Oct22nd2018*/
-	qcom,fastchg-current-ma = <4800>;
+	qcom,fastchg-current-ma = <3300>;
 	qcom,jeita-fcc-ranges = <0  50  300000
 				51  100  1600000
 				101 150  3200000
@@ -33,7 +33,7 @@ qcom,scud {
 				201  300  4360000
 				301  400  4340000
 				401  500  4340000>;
-	qcom,max-voltage-uv = <4400000>;
+	qcom,max-voltage-uv = <4150000>;
 	qcom,fg-cc-cv-threshold-mv = <4390>;
 	qcom,nom-batt-capacity-mah = <3300>;
 	qcom,batt-id-kohm = <68>;
