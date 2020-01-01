@@ -27,7 +27,7 @@
 #include "dsi_parser.h"
 
 #ifdef CONFIG_KLAPSE
-#include <linux/klapse.h>
+#include "../sde/klapse.h"
 #endif
 #include <linux/fs.h>
 #include <asm/uaccess.h>
