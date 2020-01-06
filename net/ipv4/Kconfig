@@ -489,7 +489,14 @@ config TCP_CONG_BIC
 	scalability. Under small congestion windows, binary search
 	increase provides TCP friendliness.
 	See http://www.csc.ncsu.edu/faculty/rhee/export/bitcp/
-
+	
+config TCP_CONG_SOCIOPATH
+        tristate "TCP Sociopath"
+        default n
+        ---help---
+        This is basically TCP Reno with no slow start and a much more
+        aggressive ssthresh recalculation (lowers it by 5% instead of 50%).
+        Use responsibly!
 config TCP_CONG_CUBIC
 	tristate "CUBIC TCP"
 	default y
@@ -714,6 +721,9 @@ choice
 
 	config DEFAULT_RENO
 		bool "Reno"
+		
+	config DEFAULT_SOCIOPATH
+		bool "Sociopath" if TCP_CONG_SOCIOPATH=y
 endchoice
 
 endif
@@ -736,6 +746,7 @@ config DEFAULT_TCP_CONG
 	default "dctcp" if DEFAULT_DCTCP
 	default "cdg" if DEFAULT_CDG
 	default "bbr" if DEFAULT_BBR
+	default "sociopath" if DEFAULT_SOCIOPATH
 	default "cubic"
 
 config TCP_MD5SIG
